@@ -8,11 +8,22 @@
  * isArrayLengthOdd([1, 2, 3]) -> true
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
+
+/* old sol
 function isArrayLengthOdd(numbers) {
   if(numbers.length%2 !== 0) return true;
   return false;
 }
+*/
+
+
+// *new sol.
+
+const isArrayLengthOdd = (numbers) => (numbers.length%2 !== 0)
+
  isArrayLengthOdd([3, 2, 1]);
+
+
 
 /**
  * isArrayLengthEven(numbers):
@@ -24,10 +35,18 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3]) -> false
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
+
+
+/* old sol.
 function isArrayLengthEven(numbers) {
   if(numbers.length%2 === 0) return true;
   return false;
 }
+*/
+// *new sol.
+const isArrayLengthEven = (numbers) => (!isArrayLengthOdd(numbers))
+
+
 isArrayLengthEven([1, 2, 3, 4]);
 
 /**
@@ -38,11 +57,22 @@ isArrayLengthEven([1, 2, 3, 4]);
  * e.g.
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
+
+/* old sol.
+
 function addLailaToArray(instructors) {
 instructors.push("Laila");
 return instructors;
 }
+*/
+
+// *new sol.
+const addLailaToArray = (instructors) =>  {instructors.push("Laila")
+return instructors}
+
+
 addLailaToArray(["Mshary", "Hasan"]);
+
 
 /**
  * eliminateTeam(teams):
@@ -52,10 +82,23 @@ addLailaToArray(["Mshary", "Hasan"]);
  * e.g.
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
+
+/* old sol.
+
 function eliminateTeam(teams) {
   let elm = teams.pop();
   return elm;
 }
+*/
+
+
+// *new sol.
+
+const eliminateTeam = (teams) => {
+  let eliminated = teams.pop()
+  return eliminated
+}
+
 eliminateTeam(["team1", "team2", "team3"]);
 
 /**
@@ -68,13 +111,24 @@ eliminateTeam(["team1", "team2", "team3"]);
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]) -> ["banana", "kiwi"]
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
+
+/* old sol
+
 function secondHalfOfArrayIfItIsEven(fruits) {
 
 if (fruits.length%2 === 0){
 return fruits.slice(((fruits.length)/2), fruits.length);}
 else {return fruits.slice(0, -fruits.length);}
 }
+*/
 
+// *new sol.
+const secondHalfOfArrayIfItIsEven = (fruits) => {
+  if (fruits.length%2 === 0) return fruits.slice(fruits.length/2 , fruits.length)
+  return []
+}
+
+secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"])
 
 /**
  * youGottaCalmDown(shout):
@@ -91,6 +145,8 @@ else {return fruits.slice(0, -fruits.length);}
  * - Use string method .endsWith()
  */
 
+// old sol.
+
  function youGottaCalmDown(shout) {
 
   while (shout.endsWith('!')){
@@ -103,7 +159,19 @@ else {return fruits.slice(0, -fruits.length);}
     }
  return shout ;
   }
+
+// *very nice try
+/*
+  const youGottaCalmDown = (shout) => {
+   shout = shout.split("")
+   shout.find(element => element === "!")
+   return shout
+    }
+    */
+
 youGottaCalmDown("coded!!!");
+
+
 
 module.exports = {
   isArrayLengthOdd,
